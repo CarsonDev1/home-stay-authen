@@ -4,7 +4,6 @@ import ThemeProvider from './themes/ThemeProvider';
 import NotSignInRoutes from './routes/NotSignInRoutes';
 import { Bounce, ToastContainer } from 'react-toastify';
 import secureLocalStorage from 'react-secure-storage';
-import AdminRoutes from './routes/AdminRoutes';
 import PartnerRoutes from './routes/ManagerRoutes';
 import UserRoutes from './routes/UserRoutes';
 import { checkLogin } from './utils/helper';
@@ -19,8 +18,6 @@ function App() {
 
 	const checkRole = () => {
 		switch (secureLocalStorage.getItem('role')) {
-			case 'Admin':
-				return <AdminRoutes />;
 			case 'Manager':
 				return <PartnerRoutes />;
 			case 'User':
